@@ -12,74 +12,37 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* l3 = new ListNode(0);
-        int carry =0;
         ListNode* head = l3;
-        while(l1 && l2)
-        {              
-            int value = l1->val+l2->val+carry; 
+        int carry = 0;
+//         addition logic
+        while(l1 && l2) {
+            int value = l1->val + l2->val + carry;
+//             for a case where value exceed 9, store it to carry: 11/10 -> 1
             carry = value/10;
-            l3->next  = new ListNode(value%10);
-            l3 = l3->next;
-            l1 = l1->next;
-            l2 = l2->next;           
+            l3->next = new ListNode(value%10);
+            l3=l3->next;
+            l1=l1->next;
+            l2=l2->next;
         }
-        
-        while(l1)
-        { 
-             int value = l1->val+carry; 
+//         cases when l1 and l2 are not equal
+        while(l1) {
+            int value = l1->val + carry;
             carry = value/10;
-            l3->next  = new ListNode(value%10);
-            l3 = l3->next;
-            l1 = l1->next;
-            
+            l3->next = new ListNode(value%10);
+            l3=l3->next;
+            l1=l1->next;
         }
-        
-        while(l2)
-        {
-             int value = l2->val+carry; 
+        while(l2) {
+            int value = l2->val + carry;
             carry = value/10;
-            l3->next  = new ListNode(value%10);
-            l3 = l3->next;
-            l2 = l2->next;     
-            
+            l3->next = new ListNode(value%10);
+            l3=l3->next;
+            l2=l2->next;
         }
-        
+//         if carry is left out assign that as the last value of the LL
         if(carry)
-        {
-            l3 ->next = new ListNode(carry);
-        }
+            l3->next = new ListNode(carry);
+//         as the first element points 0, go from the next element
         return head->next;
-//         ListNode* l3 = new ListNode(0);
-//         ListNode* head = l3;
-//         int carry = 0;
-// //         addition logic
-//         while(l1 && l2) {
-//             int value = l1->val + l2->val + carry;
-// //             for a case where value exceed 9, store it to carry: 11/10 -> 1
-//             carry = value/10;
-//             l3->val = new ListNode(value%10);
-//             l3=l3->next;
-//             l1=l1->next;
-//             l2=l2->next;
-//         }
-// //         cases when l1 and l2 are not equal
-//         while(l1) {
-//             int value = l1->val + carry;
-//             carry = value/10;
-//             l3->val = new ListNode(value%10);
-//             l3=l3->next;
-//             l1=l1->next;
-//         }
-//         while(l2) {
-//             int value = l2->val + carry;
-//             carry = value/10;
-//             l3->val = new ListNode(value%10);
-//             l3=l3->next;
-//             l2=l2->next;
-//         }
-// //         if carry is left out assign that as the last value of the LL
-        
-// //         as the first element points 0, go from the next element
-//         return head->next;
     }
 };
