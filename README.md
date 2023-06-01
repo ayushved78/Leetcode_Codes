@@ -1,11 +1,13 @@
 # Leetcode_Codes 2023
-<!-- 
+
+## __Daily updates__ 📊
+
 📈: In progress
 🗓: Not started
 🏆: Accomplished 
--->
+
 <details>
-<summary><b>May 🗓</b></summary>
+<summary><b>May 🏆</b></summary>
 
 #### [May LeetCoding Challenge](https://github.com/ginny100/Leetcode-2023/tree/master/5.%20May)
 
