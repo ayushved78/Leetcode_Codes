@@ -6,6 +6,7 @@ public:
         for(auto i:nums1) {
             mp[i]++;
         }
+//         if a number from nums1 is found in nums 2 mark the map as false and push the element to the solution
         for(auto i:nums2) {
             if(mp[i]) {
                 mp[i]=false;
